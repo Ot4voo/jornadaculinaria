@@ -197,6 +197,8 @@
   .book-cover { width: 145px; }
   .book-title { font-size: 17px; min-height: 55px; }
   .book-brand { font-size: 4px; }
+  .book-title-row { gap: 6px; }
+  .book-flag { width: 18px; height: 12px; }
   .book-meta h3 { font-size: 12px; line-height: 1.6; }
   .book-meta p { font-size: 10px; line-height: 1.7; }
   .group-label { font-size: 10px; letter-spacing: 1px; }
