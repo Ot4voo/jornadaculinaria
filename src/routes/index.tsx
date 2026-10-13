@@ -4,7 +4,7 @@ import { ArrowRight, BookOpen, ChefHat, Check, ChevronDown, Globe2, Layers3, Lea
 import { Button } from '@/components/ui/button';
 import { books } from '@/data/collection';
 import { purchase } from '@/data/purchase';
-import heroImage from '@/assets/hero-simple.jpg';
+import heroImage from '@/assets/hero-route.jpg';
 
 const coverImages = Object.entries(import.meta.glob<string>('../assets/cover-*.jpg', { eager: true, query: '?url', import: 'default' })).sort(([a], [b]) => a.localeCompare(b)).map(([, url]) => url);
 
@@ -61,7 +61,7 @@ function Index() {
     </header>
     <main>
       <section className="hero">
-        <img src={heroImage} className="hero-photo" alt="Tomates frescos, folhas de manjericão e azeite sobre fundo verde-escuro" width={1920} height={1088} fetchPriority="high" />
+        <img src={heroImage} className="hero-photo" alt="Tomates frescos, folhas de manjericão e azeite sobre fundo verde-escuro, com uma linha de rota pontilhada passando pelos países da coleção, como um mapa de viagem" width={1376} height={768} fetchPriority="high" />
         <div className="page-width hero-inner"><div className="hero-copy">
           <p className="eyebrow text-gold">16 e-books · Uma coleção de sabores</p>
           <h1>Jornada Culinária<br />pelo Mundo.<br /><em>A próxima viagem<br />começa na sua cozinha.</em></h1>
