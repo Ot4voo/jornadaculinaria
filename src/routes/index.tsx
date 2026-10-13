@@ -41,7 +41,7 @@ function BookCard({ book }: { book: (typeof books)[number] }) {
       <div className="book-art"><img src={coverImages[index]} alt={`Composição culinária ilustrativa para ${book.place}`} loading="lazy" width={400} height={400} /></div>
       <div className="book-footer">Uma coleção de sabores e tradições</div>
     </div></div>
-    <div className="book-meta"><h3>{book.title}</h3><p>{index === 0 ? '48 receitas + 3 adaptações' : `${book.recipes} receitas`}</p>{index >= 8 && index <= 9 && <p>{book.place}</p>}</div>
+    <div className="book-meta"><div className="book-title-row">{flagCode && <img src={flagImages[flagCode]} alt="" className="book-flag" width={21} height={14} loading="lazy" />}<h3>{book.title}</h3></div><p>{index === 0 ? '48 receitas + 3 adaptações' : `${book.recipes} receitas`}</p>{index >= 8 && index <= 9 && <p>{book.place}</p>}</div>
   </article>;
 }
 
