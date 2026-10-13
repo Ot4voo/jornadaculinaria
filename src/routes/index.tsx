@@ -10,6 +10,7 @@ const coverImages = Object.entries(import.meta.glob<string>('../assets/cover-*.j
 
 const flagImages = Object.entries(import.meta.glob<string>('../assets/flags/*.svg', { eager: true, query: '?url', import: 'default' })).reduce<Record<string, string>>((acc, [path, url]) => { acc[path.replace(/^.*\//, '').replace('.svg', '')] = url; return acc; }, {});
 const flagByIndex: (string | null)[] = ['it', 'fr', 'lb', 'jp', 'br', 'mx', 'in', 'es', null, null, 'ar', 'us', 'gb', 'kr', 'cn', 'pe'];
+const heroFlags = flagByIndex.filter((code): code is string => Boolean(code));
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
@@ -74,6 +75,7 @@ function Index() {
           <BuyLink />
           <p className="hero-note">Receitas por níveis de dificuldade, com referências culinárias e adaptações para ingredientes encontrados no Brasil.</p>
         </div></div>
+        <div className="hero-flags" aria-hidden="true">{heroFlags.map(code => <span className="hero-flag" key={code}><img src={flagImages[code]} alt="" width={19} height={13} loading="lazy" /></span>)}</div>
       </section>
       <div className="stat-band"><div className="page-width stat-grid">
         {[["16", "e-books na coleção"], ["651", "receitas para explorar"], ["14", "países à sua mesa"], ["Muitas", "tradições e descobertas"]].map(([value,label]) => <div className="stat-item" key={label}><strong>{value}</strong><p>{label}</p></div>)}
