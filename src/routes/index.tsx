@@ -8,6 +8,9 @@ import heroImage from '@/assets/hero-route.jpg';
 
 const coverImages = Object.entries(import.meta.glob<string>('../assets/cover-*.jpg', { eager: true, query: '?url', import: 'default' })).sort(([a], [b]) => a.localeCompare(b)).map(([, url]) => url);
 
+const flagImages = Object.entries(import.meta.glob<string>('../assets/flags/*.svg', { eager: true, query: '?url', import: 'default' })).reduce<Record<string, string>>((acc, [path, url]) => { acc[path.replace(/^.*\//, '').replace('.svg', '')] = url; return acc; }, {});
+const flagByIndex: (string | null)[] = ['it', 'fr', 'lb', 'jp', 'br', 'mx', 'in', 'es', null, null, 'ar', 'us', 'gb', 'kr', 'cn', 'pe'];
+
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
     { title: 'Jornada Culinária pelo Mundo | 16 e-books, 651 receitas' },
