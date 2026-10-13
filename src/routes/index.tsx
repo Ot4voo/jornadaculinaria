@@ -33,6 +33,7 @@ function BuyLink({ children = 'Quero conhecer a coleção', variant = 'culinary'
 
 function BookCard({ book }: { book: (typeof books)[number] }) {
   const index = books.indexOf(book);
+  const flagCode = flagByIndex[index];
   const title = book.title.replace(' — Volume I', '');
   return <article className="book-card">
     <div className="book-stage"><div className="book-cover" data-tone={book.tone}>
