@@ -188,7 +188,7 @@
   .hero-description { font-size: 14px; }
   .hero-values { gap: 18px; font-size: 11px; }
   .hero-note { max-width: 310px; }
-  .hero-flags { flex-wrap: wrap; gap: 11px 9px; padding: 0 16px 22px; }
+  .hero-flags { display: grid; grid-template-columns: repeat(7, auto); justify-content: center; align-content: center; gap: 11px 9px; padding: 0 16px 22px; }
   .hero-flags::before { display: none; }
   .hero-flag { width: 26px; height: 26px; }
   .hero-flag img { width: 18px; height: 12px; border-radius: 2px; }
