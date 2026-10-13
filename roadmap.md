@@ -1,3 +1,7 @@
 # Jornada Culinária pelo Mundo
 - [x] Criar página editorial com todas as seções e informações do documento.
 - [x] Verificar coleção, navegação de compra e exibição em celular.
+- [x] Formato PDF e entrega por e-mail na seção "Como funciona", no FAQ e na oferta.
+- [x] Preço "de R$ 89,00 por R$ 19,00" e botão "Quero" na seção final.
+- [ ] Colar a URL real de pagamento para ativar o botão "Quero".
+- [ ] Confirmar condições de pagamento e política de garantia.
