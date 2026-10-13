@@ -2,9 +2,9 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ArrowRight, BookOpen, ChefHat, Check, ChevronDown, Globe2, Layers3, Leaf, LockKeyhole, Utensils } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { books, countryBooks, traditionBooks } from '@/data/collection';
+import { books } from '@/data/collection';
 import { purchase } from '@/data/purchase';
-import heroImage from '@/assets/culinary-hero.jpg';
+import heroImage from '@/assets/hero-simple.jpg';
 
 const coverImages = Object.entries(import.meta.glob<string>('../assets/cover-*.jpg', { eager: true, query: '?url', import: 'default' })).sort(([a], [b]) => a.localeCompare(b)).map(([, url]) => url);
 
@@ -28,16 +28,17 @@ function BuyLink({ children = 'Quero conhecer a coleção', variant = 'culinary'
   return <Button variant={variant} asChild size="lg" className="h-12 px-6 text-xs"><a href="#compra">{children}<ArrowRight size={16} /></a></Button>;
 }
 
-function BookCard({ book }: { book: (typeof countryBooks)[number] | (typeof traditionBooks)[number] }) {
+function BookCard({ book }: { book: (typeof books)[number] }) {
+  const index = books.indexOf(book);
   const title = book.title.replace(' — Volume I', '');
   return <article className="book-card">
     <div className="book-stage"><div className="book-cover" data-tone={book.tone}>
       <div className="book-brand">Jornada Culinária pelo Mundo</div>
-      <div className="book-title">{title}{book.index === 15 && <small>Volume I</small>}</div>
-      <div className="book-art"><img src={coverImages[book.index]} alt={`Composição culinária ilustrativa para ${book.place}`} loading="lazy" width={400} height={400} /></div>
+      <div className="book-title">{title}{index === 15 && <small>Volume I</small>}</div>
+      <div className="book-art"><img src={coverImages[index]} alt={`Composição culinária ilustrativa para ${book.place}`} loading="lazy" width={400} height={400} /></div>
       <div className="book-footer">Uma coleção de sabores e tradições</div>
     </div></div>
-    <div className="book-meta"><h3>{book.title}</h3><p>{book.index === 0 ? '48 receitas + 3 adaptações' : `${book.recipes} receitas`}</p>{book.index >= 8 && book.index <= 9 && <p>{book.place}</p>}</div>
+    <div className="book-meta"><h3>{book.title}</h3><p>{index === 0 ? '48 receitas + 3 adaptações' : `${book.recipes} receitas`}</p>{index >= 8 && index <= 9 && <p>{book.place}</p>}</div>
   </article>;
 }
 
@@ -60,7 +61,7 @@ function Index() {
     </header>
     <main>
       <section className="hero">
-        <img src={heroImage} className="hero-photo" alt="Mesa com ingredientes, ervas frescas e composições culinárias variadas" width={1920} height={1088} fetchPriority="high" />
+        <img src={heroImage} className="hero-photo" alt="Tomates frescos, folhas de manjericão e azeite sobre fundo verde-escuro" width={1920} height={1088} fetchPriority="high" />
         <div className="page-width hero-inner"><div className="hero-copy">
           <p className="eyebrow text-gold">16 e-books · Uma coleção de sabores</p>
           <h1>Jornada Culinária<br />pelo Mundo.<br /><em>A próxima viagem<br />começa na sua cozinha.</em></h1>
@@ -81,10 +82,7 @@ function Index() {
       </section>
       <section id="colecao" className="section collection"><div className="page-width">
         <div className="section-heading"><p className="eyebrow text-muted-foreground">Sua próxima descoberta está aqui</p><h2 className="section-title">16 livros. Incontáveis descobertas.</h2><p className="section-copy mt-4">Uma coleção para viajar por ingredientes, técnicas e histórias.<br className="hidden sm:block" /> Escolha por onde começar — e deixe a curiosidade guiar o caminho.</p></div>
-        <div className="group-label"><Globe2 size={16} strokeWidth={1.5} />14 países, novos repertórios</div>
-        <div className="book-grid">{countryBooks.map(book => <BookCard book={book} key={book.title} />)}</div>
-        <div className="group-label"><Leaf size={16} strokeWidth={1.5} />Um continente e uma tradição culinária</div>
-        <div className="book-grid tradition-grid">{traditionBooks.map(book => <BookCard book={book} key={book.title} />)}</div>
+        <div className="book-grid">{books.map(book => <BookCard book={book} key={book.title} />)}</div>
         <p className="collection-note">651 receitas = 648 receitas dos volumes originais incluídos + 3 adaptações adicionais em Itália à Mesa.<br />As imagens são composições culinárias ilustrativas, não uma lista de pratos incluídos nos e-books.</p>
         <div className="text-center mt-8"><BuyLink>Quero explorar esses sabores</BuyLink></div>
       </div></section>
