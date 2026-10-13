@@ -9,6 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        culinary: "bg-gold text-forest hover:bg-gold-hover shadow-sm font-semibold",
+        editorial: "border border-border bg-transparent text-primary hover:bg-accent",
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
