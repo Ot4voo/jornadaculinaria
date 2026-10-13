@@ -81,10 +81,7 @@ function Index() {
       </section>
       <section id="colecao" className="section collection"><div className="page-width">
         <div className="section-heading"><p className="eyebrow text-muted-foreground">Sua próxima descoberta está aqui</p><h2 className="section-title">16 livros. Incontáveis descobertas.</h2><p className="section-copy mt-4">Uma coleção para viajar por ingredientes, técnicas e histórias.<br className="hidden sm:block" /> Escolha por onde começar — e deixe a curiosidade guiar o caminho.</p></div>
-        <div className="group-label"><Globe2 size={16} strokeWidth={1.5} />14 países, novos repertórios</div>
-        <div className="book-grid">{countryBooks.map(book => <BookCard book={book} key={book.title} />)}</div>
-        <div className="group-label"><Leaf size={16} strokeWidth={1.5} />Um continente e uma tradição culinária</div>
-        <div className="book-grid tradition-grid">{traditionBooks.map(book => <BookCard book={book} key={book.title} />)}</div>
+        <div className="book-grid">{books.map(book => <BookCard book={book} key={book.title} />)}</div>
         <p className="collection-note">651 receitas = 648 receitas dos volumes originais incluídos + 3 adaptações adicionais em Itália à Mesa.<br />As imagens são composições culinárias ilustrativas, não uma lista de pratos incluídos nos e-books.</p>
         <div className="text-center mt-8"><BuyLink>Quero explorar esses sabores</BuyLink></div>
       </div></section>
