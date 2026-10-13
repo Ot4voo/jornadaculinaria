@@ -180,7 +180,7 @@
   .brand-name { font-size: 14px; }
   .brand-icon { width: 33px; height: 33px; }
   .header-cta { font-size: 10px; padding-inline: 12px; }
-  .hero-inner { padding-block: 45px 48px; min-height: 640px; }
+  .hero-inner { padding-block: 45px 112px; min-height: 640px; }
   .hero-photo { object-position: 62% center; opacity: .48; }
   .hero::after { background: linear-gradient(90deg, var(--forest), oklch(.255 .043 157 / .5)); }
   .hero h1 { font-size: 41px; line-height: 1.17; margin-block: 19px; }
@@ -188,6 +188,10 @@
   .hero-description { font-size: 14px; }
   .hero-values { gap: 18px; font-size: 11px; }
   .hero-note { max-width: 310px; }
+  .hero-flags { flex-wrap: wrap; gap: 11px 9px; padding: 0 16px 22px; }
+  .hero-flags::before { display: none; }
+  .hero-flag { width: 26px; height: 26px; }
+  .hero-flag img { width: 18px; height: 12px; border-radius: 2px; }
   .stat-grid { grid-template-columns: repeat(2,1fr); gap: 22px 0; }
   .stat-item:nth-child(2) { border: 0; }
   .stat-item strong { font-size: 28px; }
