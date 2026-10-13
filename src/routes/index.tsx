@@ -48,7 +48,7 @@ const faq = [
   ['Quais culinárias fazem parte?', 'Itália, França, Líbano, Japão, Brasil, México, Índia, Espanha, Argentina, Estados Unidos, Reino Unido, Coreia, China e Peru, além das culinárias africanas e da tradição afro-brasileira. O e-book peruano é Peru à Mesa — Volume I, com 36 receitas.'],
   ['As receitas são organizadas por nível?', 'Sim. As receitas são organizadas por níveis de dificuldade e preparadas para cozinheiros domésticos no Brasil. Conforme o volume, há orientações sobre técnicas, ingredientes e possíveis substituições disponíveis no país.'],
   ['As receitas citadas são oficiais dos chefs?', 'Os nomes indicam referências ou inspirações editoriais em volumes específicos, sem implicar parceria, patrocínio ou endosso. As receitas atribuídas a Cheff Otto são adaptações editoriais de receitas publicadas por ele e ajustadas para esta coleção. Metzi é uma referência de restaurante.'],
-  ['Como recebo o produto?', '[PREENCHER COM A FORMA DE ENTREGA CONFIRMADA]'],
+  ['Como recebo o produto?', 'A coleção é entregue em formato PDF: você recebe os 16 e-books por e-mail, prontos para abrir no celular, no tablet ou no computador.'],
 ];
 
 function Index() {
@@ -66,7 +66,7 @@ function Index() {
           <p className="eyebrow text-gold">16 e-books · Uma coleção de sabores</p>
           <h1>Jornada Culinária<br />pelo Mundo.<br /><em>A próxima viagem<br />começa na sua cozinha.</em></h1>
           <p className="hero-description">Explore 14 países e muitas tradições culinárias em 16 e-books e 651 receitas organizadas para cozinhar em casa e descobrir novos sabores.</p>
-          <div className="hero-values"><span><BookOpen />16 e-books digitais</span><span><Utensils />651 receitas</span></div>
+          <div className="hero-values"><span><BookOpen />16 e-books em PDF</span><span><Utensils />651 receitas</span></div>
           <BuyLink />
           <p className="hero-note">Receitas por níveis de dificuldade, com referências culinárias e adaptações para ingredientes encontrados no Brasil.</p>
         </div></div>
@@ -95,15 +95,19 @@ function Index() {
         <div><p className="eyebrow text-muted-foreground">Para quem tem curiosidade e apetite</p><h2 className="section-title">Seu repertório merece<br />novos destinos.</h2><p className="section-copy mt-4">Não é preciso sair de casa para conhecer um novo universo de sabores. É preciso vontade de experimentar.</p></div>
         <ul className="audience-list">{['Para quem tem curiosidade sobre as culinárias de diferentes lugares.', 'Para quem gosta de cozinhar em casa e quer ampliar o repertório.', 'Para quem prefere receitas com instruções organizadas por níveis.', 'Para quem busca ideias para variar refeições e explorar ingredientes e técnicas.'].map(text => <li key={text}><Check size={18} strokeWidth={1.5} /><span>{text}</span></li>)}</ul>
       </section>
-      <section className="section delivery"><div className="page-width"><p className="eyebrow text-muted-foreground">Da coleção para a sua cozinha</p><h2 className="section-title">Como funciona</h2><div className="delivery-grid"><div className="delivery-step"><span className="step-number">01</span><div><h3>O formato da sua coleção</h3><p className="placeholder mt-2">{purchase.deliveryFormat}</p></div></div><div className="delivery-step"><span className="step-number">02</span><div><h3>Como você recebe os e-books</h3><p className="placeholder mt-2">{purchase.deliveryMethod}</p></div></div></div></div></section>
+      <section className="section delivery"><div className="page-width"><p className="eyebrow text-muted-foreground">Da coleção para a sua cozinha</p><h2 className="section-title">Como funciona</h2><div className="delivery-grid"><div className="delivery-step"><span className="step-number">01</span><div><h3>O formato da sua coleção</h3><p className="delivery-copy mt-2">{purchase.deliveryFormat}</p></div></div><div className="delivery-step"><span className="step-number">02</span><div><h3>Como você recebe os e-books</h3><p className="delivery-copy mt-2">{purchase.deliveryMethod}</p></div></div></div></div></section>
       <section id="perguntas" className="section page-width"><div className="faq-inner"><div className="section-heading"><p className="eyebrow text-muted-foreground">Antes de começar a viagem</p><h2 className="section-title">Perguntas frequentes</h2></div>
         {faq.map(([question,answer],index) => <div className="faq-item" key={question}><Button variant="ghost" className="faq-trigger" aria-expanded={openFaq === index} aria-controls={`faq-${index}`} onClick={() => setOpenFaq(openFaq === index ? null : index)}><span className="min-w-0">{question}</span><ChevronDown size={17} className={`shrink-0 transition-transform ${openFaq === index ? 'rotate-180' : ''}`} /></Button>{openFaq === index && <div id={`faq-${index}`} className="faq-answer">{answer}</div>}</div>)}
       </div></section>
       <section id="compra" className="section offer"><div className="page-width offer-inner">
         <div><p className="eyebrow text-gold">Uma coleção inteira. Um novo repertório.</p><h2>Jornada Culinária<br />pelo Mundo</h2><div className="offer-facts"><span className="flex items-center gap-2"><BookOpen size={17} />16 e-books</span><span className="flex items-center gap-2"><ChefHat size={17} />651 receitas</span></div><p className="offer-summary">Itália, França, Líbano, Japão, Brasil, México, Índia, Espanha, Argentina, Estados Unidos, Reino Unido, Coreia, China e Peru. Mais as culinárias africanas e a tradição afro-brasileira.</p></div>
-        <div className="offer-purchase"><p className="offer-label">Coleção completa</p><p className="offer-price">{purchase.price}</p><p className="placeholder">{purchase.payment}</p><p className="placeholder">Garantia: {purchase.guarantee}</p>
-          {purchase.checkoutUrl ? <Button variant="culinary" className="checkout-button" asChild><a href={purchase.checkoutUrl}>Ir para o checkout<ArrowRight /></a></Button> : <Button variant="culinary" className="checkout-button" disabled>Ir para o checkout<ArrowRight /></Button>}
-          {!purchase.checkoutUrl && <p className="checkout-pending"><LockKeyhole size={12} />[URL DO CHECKOUT] — aguardando configuração</p>}
+        <div className="offer-purchase"><p className="offer-label">Coleção completa</p>
+          <p className="offer-price"><s className="offer-price-from">de {purchase.priceFrom}</s><strong className="offer-price-to">por {purchase.priceTo}</strong></p>
+          <p className="offer-delivery">16 e-books em PDF, recebidos por e-mail.</p>
+          {purchase.checkoutUrl ? <Button variant="culinary" className="checkout-button" asChild><a href={purchase.checkoutUrl}>Quero<ArrowRight /></a></Button> : <Button variant="culinary" className="checkout-button" disabled>Quero<ArrowRight /></Button>}
+          {!purchase.checkoutUrl && <p className="checkout-pending"><LockKeyhole size={12} />URL de pagamento ainda não configurada</p>}
+          <p className="placeholder">Pagamento: {purchase.payment}</p>
+          <p className="placeholder">Garantia: {purchase.guarantee}</p>
         </div>
       </div></section>
     </main>
