@@ -116,6 +116,8 @@
 .book-art img { position: absolute; width: 100%; height: 100%; object-fit: cover; }
 .book-footer { text-align: center; font-size: 5px; letter-spacing: 1px; padding: 9px 4px; text-transform: uppercase; }
 .book-meta { padding-top: 15px; }
+.book-title-row { display: flex; align-items: center; gap: 7px; min-width: 0; }
+.book-flag { width: 21px; height: 14px; flex-shrink: 0; object-fit: cover; border-radius: 2.5px; box-shadow: 0 0 0 1px color-mix(in srgb, var(--foreground) 14%, transparent); }
 .book-meta h3 { font-family: var(--font-sans); font-size: 13px; font-weight: 600; }
 .book-meta p { font-size: 11px; color: var(--muted-foreground); margin-top: 5px; }
 .tradition-grid { grid-template-columns: repeat(2,minmax(0,1fr)); max-width: 578px; }
@@ -195,6 +197,8 @@
   .book-cover { width: 145px; }
   .book-title { font-size: 17px; min-height: 55px; }
   .book-brand { font-size: 4px; }
+  .book-title-row { gap: 6px; }
+  .book-flag { width: 18px; height: 12px; }
   .book-meta h3 { font-size: 12px; line-height: 1.6; }
   .book-meta p { font-size: 10px; line-height: 1.7; }
   .group-label { font-size: 10px; letter-spacing: 1px; }

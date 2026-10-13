@@ -8,6 +8,9 @@ import heroImage from '@/assets/hero-route.jpg';
 
 const coverImages = Object.entries(import.meta.glob<string>('../assets/cover-*.jpg', { eager: true, query: '?url', import: 'default' })).sort(([a], [b]) => a.localeCompare(b)).map(([, url]) => url);
 
+const flagImages = Object.entries(import.meta.glob<string>('../assets/flags/*.svg', { eager: true, query: '?url', import: 'default' })).reduce<Record<string, string>>((acc, [path, url]) => { acc[path.replace(/^.*\//, '').replace('.svg', '')] = url; return acc; }, {});
+const flagByIndex: (string | null)[] = ['it', 'fr', 'lb', 'jp', 'br', 'mx', 'in', 'es', null, null, 'ar', 'us', 'gb', 'kr', 'cn', 'pe'];
+
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
     { title: 'Jornada Culinária pelo Mundo | 16 e-books, 651 receitas' },
@@ -30,6 +33,7 @@ function BuyLink({ children = 'Quero conhecer a coleção', variant = 'culinary'
 
 function BookCard({ book }: { book: (typeof books)[number] }) {
   const index = books.indexOf(book);
+  const flagCode = flagByIndex[index];
   const title = book.title.replace(' — Volume I', '');
   return <article className="book-card">
     <div className="book-stage"><div className="book-cover" data-tone={book.tone}>
@@ -38,7 +42,7 @@ function BookCard({ book }: { book: (typeof books)[number] }) {
       <div className="book-art"><img src={coverImages[index]} alt={`Composição culinária ilustrativa para ${book.place}`} loading="lazy" width={400} height={400} /></div>
       <div className="book-footer">Uma coleção de sabores e tradições</div>
     </div></div>
-    <div className="book-meta"><h3>{book.title}</h3><p>{index === 0 ? '48 receitas + 3 adaptações' : `${book.recipes} receitas`}</p>{index >= 8 && index <= 9 && <p>{book.place}</p>}</div>
+    <div className="book-meta"><div className="book-title-row">{flagCode && <img src={flagImages[flagCode]} alt="" className="book-flag" width={21} height={14} loading="lazy" />}<h3>{book.title}</h3></div><p>{index === 0 ? '48 receitas + 3 adaptações' : `${book.recipes} receitas`}</p>{index >= 8 && index <= 9 && <p>{book.place}</p>}</div>
   </article>;
 }
 
