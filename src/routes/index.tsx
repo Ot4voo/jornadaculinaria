@@ -60,7 +60,7 @@ function Index() {
     </header>
     <main>
       <section className="hero">
-        <img src={heroImage} className="hero-photo" alt="Mesa com ingredientes, ervas frescas e composições culinárias variadas" width={1920} height={1088} fetchPriority="high" />
+        <img src={heroImage} className="hero-photo" alt="Tomates frescos, folhas de manjericão e azeite sobre fundo verde-escuro" width={1920} height={1088} fetchPriority="high" />
         <div className="page-width hero-inner"><div className="hero-copy">
           <p className="eyebrow text-gold">16 e-books · Uma coleção de sabores</p>
           <h1>Jornada Culinária<br />pelo Mundo.<br /><em>A próxima viagem<br />começa na sua cozinha.</em></h1>
