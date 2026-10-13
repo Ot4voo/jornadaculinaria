@@ -73,7 +73,7 @@
 .hero { position: relative; background: var(--forest); color: var(--ivory); overflow: hidden; }
 .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .hero::after { content: ''; position: absolute; inset: 0; background: var(--hero-overlay); }
-.hero-inner { position: relative; z-index: 1; padding-top: 72px; padding-bottom: 68px; min-height: 610px; }
+.hero-inner { position: relative; z-index: 1; padding-top: 72px; padding-bottom: 98px; min-height: 610px; }
 .hero-copy { max-width: 590px; }
 .hero h1 { font-size: 57px; line-height: 1.12; margin: 20px 0; }
 .hero h1 em { color: var(--gold); font-weight: 400; }
@@ -82,6 +82,10 @@
 .hero-values span { display: flex; gap: 8px; align-items: center; }
 .hero-values svg { color: var(--gold); width: 16px; height: 16px; }
 .hero-note { font-size: 11px; line-height: 1.7; opacity: .75; max-width: 385px; margin-top: 14px; }
+.hero-flags { position: absolute; z-index: 1; left: 0; right: 0; bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 17px; padding: 0 18px; }
+.hero-flags::before { content: ''; position: absolute; left: 26px; right: 26px; bottom: 13px; border-top: 1px dashed color-mix(in oklab, var(--gold) 42%, transparent); opacity: .6; }
+.hero-flag { position: relative; display: grid; place-items: center; width: 27px; height: 27px; border-radius: 50%; background: oklch(.16 .03 155 / .8); box-shadow: 0 0 0 1px oklch(.96 .02 95 / .13); }
+.hero-flag img { width: 19px; height: 13px; border-radius: 2.5px; display: block; }
 .stat-band { background: var(--secondary); border-bottom: 1px solid var(--border); }
 .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding-block: 28px; }
 .stat-item { text-align: center; border-right: 1px solid var(--border); }
@@ -176,7 +180,7 @@
   .brand-name { font-size: 14px; }
   .brand-icon { width: 33px; height: 33px; }
   .header-cta { font-size: 10px; padding-inline: 12px; }
-  .hero-inner { padding-block: 45px 48px; min-height: 640px; }
+  .hero-inner { padding-block: 45px 112px; min-height: 640px; }
   .hero-photo { object-position: 62% center; opacity: .48; }
   .hero::after { background: linear-gradient(90deg, var(--forest), oklch(.255 .043 157 / .5)); }
   .hero h1 { font-size: 41px; line-height: 1.17; margin-block: 19px; }
@@ -184,6 +188,10 @@
   .hero-description { font-size: 14px; }
   .hero-values { gap: 18px; font-size: 11px; }
   .hero-note { max-width: 310px; }
+  .hero-flags { display: grid; grid-template-columns: repeat(7, auto); justify-content: center; align-content: center; gap: 11px 9px; padding: 0 16px 22px; }
+  .hero-flags::before { display: none; }
+  .hero-flag { width: 26px; height: 26px; }
+  .hero-flag img { width: 18px; height: 12px; border-radius: 2px; }
   .stat-grid { grid-template-columns: repeat(2,1fr); gap: 22px 0; }
   .stat-item:nth-child(2) { border: 0; }
   .stat-item strong { font-size: 28px; }
