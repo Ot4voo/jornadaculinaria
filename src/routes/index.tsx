@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
-import { ArrowDown, ArrowRight, BookOpen, ChefHat, Check, ChevronDown, Globe2, Layers3, Leaf, LockKeyhole, Utensils } from 'lucide-react';
+import { ArrowRight, BookOpen, ChefHat, Check, ChevronDown, Globe2, Layers3, Leaf, LockKeyhole, Utensils } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { books, countryBooks, traditionBooks } from '@/data/collection';
 import { purchase } from '@/data/purchase';
