@@ -2,9 +2,9 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ArrowRight, BookOpen, ChefHat, Check, ChevronDown, Globe2, Layers3, Leaf, LockKeyhole, Utensils } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { books, countryBooks, traditionBooks } from '@/data/collection';
+import { books } from '@/data/collection';
 import { purchase } from '@/data/purchase';
-import heroImage from '@/assets/culinary-hero.jpg';
+import heroImage from '@/assets/hero-simple.jpg';
 
 const coverImages = Object.entries(import.meta.glob<string>('../assets/cover-*.jpg', { eager: true, query: '?url', import: 'default' })).sort(([a], [b]) => a.localeCompare(b)).map(([, url]) => url);
 
@@ -28,7 +28,7 @@ function BuyLink({ children = 'Quero conhecer a coleção', variant = 'culinary'
   return <Button variant={variant} asChild size="lg" className="h-12 px-6 text-xs"><a href="#compra">{children}<ArrowRight size={16} /></a></Button>;
 }
 
-function BookCard({ book }: { book: (typeof countryBooks)[number] | (typeof traditionBooks)[number] }) {
+function BookCard({ book }: { book: (typeof books)[number] }) {
   const title = book.title.replace(' — Volume I', '');
   return <article className="book-card">
     <div className="book-stage"><div className="book-cover" data-tone={book.tone}>
