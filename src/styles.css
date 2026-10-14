@@ -52,7 +52,7 @@
   --book-spice: oklch(.44 .084 62);
   --book-forest: oklch(.33 .067 155);
   --book-shadow: 5px 8px 15px oklch(.2 .025 90 / .14);
-  --hero-overlay: linear-gradient(90deg, oklch(.19 .037 153 / .75), oklch(.19 .037 153 / .3) 50%, transparent 75%);
+  --hero-overlay: linear-gradient(90deg, oklch(.19 .037 153 / .9), oklch(.19 .037 153 / .65) 50%, transparent 85%);
 }
 @layer base {
   * { border-color: var(--border); letter-spacing: 0; }
@@ -73,12 +73,43 @@
 .hero { position: relative; background: var(--forest); color: var(--ivory); overflow: hidden; }
 .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .hero::after { content: ''; position: absolute; inset: 0; background: var(--hero-overlay); }
-.hero-inner { position: relative; z-index: 1; padding-top: 72px; padding-bottom: 98px; min-height: 610px; }
+.hero-inner { position: relative; z-index: 1; padding-top: 40px; padding-bottom: 76px; }
 .hero-copy { max-width: 590px; }
-.hero h1 { font-size: 57px; line-height: 1.12; margin: 20px 0; }
+.hero h1 { font-size: 49px; line-height: 1.12; margin: 16px 0 12px; }
+.hero-tagline { font-family: var(--font-display); font-size: 23px; color: var(--gold); margin-bottom: 14px; }
+.hero-delivery { display: flex; align-items: center; gap: 8px; font-size: 12px; margin-top: 12px; }
+.hero-delivery svg { color: var(--gold); }
+.hero-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin-block: 19px; }
+.hero-price s { font-size: 12px; }
+.hero-price strong { font-size: 25px; color: var(--gold); font-weight: 600; }
+.hero-price span { font-size: 11px; }
+.purchase-control { min-width: 0; }
+.purchase-status { font-size: 12px; line-height: 1.7; margin-top: 10px; }
+.hero .purchase-status { color: var(--ivory); }
+.purchase-control button { max-width: 100%; white-space: normal; }
+.purchase-control a { max-width: 100%; }
+.collection-preview-label { font-size: 11px; color: var(--muted-foreground); line-height: 1.8; margin-top: 14px; }
+.content-details { background: var(--secondary); border-block: 1px solid var(--border); }
+.content-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 40px; }
+.content-item { border-top: 1px solid var(--border); padding-top: 22px; }
+.content-item svg { color: var(--primary); margin-bottom: 16px; }
+.content-item h3 { font-family: var(--font-sans); font-size: 15px; font-weight: 600; }
+.content-item p { font-size: 13px; line-height: 1.85; color: var(--muted-foreground); margin-top: 9px; }
+.sample-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; margin-top: 35px; }
+.sample-grid img { width: 100%; height: auto; }
+.sample-grid figcaption { font-size: 12px; margin-top: 10px; }
+.device-list { display: flex; align-items: center; gap: 9px; font-size: 12px; margin-top: 16px; }
+.offer-included { margin-top: 20px; display: grid; gap: 10px; }
+.offer-included li { display: flex; align-items: start; gap: 8px; font-size: 12px; line-height: 1.7; }
+.offer-included svg { flex-shrink: 0; margin-top: 3px; color: var(--gold); }
+.offer-condition { font-size: 12px; line-height: 1.8; margin-top: 10px; }
+.offer .purchase-status { color: var(--ivory); }
+.book-meta .recipe-count { color: var(--primary); font-weight: 600; font-size: 12px; }
+.book-place { line-height: 1.6; }
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .hero h1 em { color: var(--gold); font-weight: 400; }
 .hero-description { font-size: 15px; line-height: 1.8; max-width: 450px; color: var(--ivory); opacity: .86; }
-.hero-values { display: flex; align-items: center; gap: 23px; margin: 26px 0; font-size: 12px; }
+.hero-values { display: flex; align-items: center; gap: 23px; margin: 18px 0 0; font-size: 12px; }
 .hero-values span { display: flex; gap: 8px; align-items: center; }
 .hero-values svg { color: var(--gold); width: 16px; height: 16px; }
 .hero-note { font-size: 11px; line-height: 1.7; opacity: .75; max-width: 385px; margin-top: 14px; }
@@ -163,7 +194,7 @@
 .checkout-button:disabled { opacity: .65; }
 .checkout-pending { display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 10px; margin-top: 12px; color: var(--gold); }
 .footer { padding-block: 30px; }
-@media (min-width: 1600px) { .hero-inner { min-height: 660px; } }
+@media (min-width: 1600px) { .hero-photo { object-position: center 58%; } }
 @media (max-width: 1023px) {
   .site-nav { gap: 20px; }
   .hero h1 { font-size: 48px; }
@@ -180,10 +211,13 @@
   .brand-name { font-size: 14px; }
   .brand-icon { width: 33px; height: 33px; }
   .header-cta { font-size: 10px; padding-inline: 12px; }
-  .hero-inner { padding-block: 45px 112px; min-height: 640px; }
+  .hero-inner { padding-block: 28px 114px; }
   .hero-photo { object-position: 62% center; opacity: .48; }
   .hero::after { background: linear-gradient(90deg, var(--forest), oklch(.255 .043 157 / .5)); }
-  .hero h1 { font-size: 41px; line-height: 1.17; margin-block: 19px; }
+  .hero h1 { font-size: 35px; line-height: 1.17; margin-block: 14px 10px; }
+  .hero-tagline { font-size: 20px; line-height: 1.4; }
+  .hero-description { line-height: 1.7; }
+  .content-grid,.sample-grid { grid-template-columns: 1fr; gap: 25px; }
   .hero-copy { max-width: 480px; }
   .hero-description { font-size: 14px; }
   .hero-values { gap: 18px; font-size: 11px; }
@@ -218,7 +252,7 @@
 }
 @media (max-width: 374px) {
   .page-width { width: calc(100% - 32px); }
-  .hero h1 { font-size: 36px; }
+  .hero h1 { font-size: 31px; }
   .book-stage { padding-inline: 9px; min-height: 195px; }
   .book-title { font-size: 15px; }
   .header-cta { padding-inline: 8px; }
