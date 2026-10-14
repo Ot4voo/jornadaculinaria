@@ -1,7 +1,11 @@
 # Jornada Culinária pelo Mundo
+- [ ] Reformular clareza da oferta, coleção, entrega, FAQ e caminho de compra conforme o novo briefing.
+- [ ] Verificar ausência de textos provisórios e funcionamento em computador e celular.
+- [ ] Receber capas ou páginas reais para mostrar amostras do conteúdo, sem inventar exemplos.
 - [x] Criar página editorial com todas as seções e informações do documento.
 - [x] Verificar coleção, navegação de compra e exibição em celular.
 - [x] Formato PDF e entrega por e-mail na seção "Como funciona", no FAQ e na oferta.
 - [x] Preço "de R$ 89,00 por R$ 19,00" e botão "Quero" na seção final.
 - [ ] Colar a URL real de pagamento para ativar o botão "Quero".
 - [ ] Confirmar condições de pagamento e política de garantia.
+- [ ] Confirmar prazo de entrega e possibilidade de baixar os arquivos novamente.
