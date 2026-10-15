@@ -37,6 +37,7 @@ function BookCard({ book }: { book: (typeof books)[number] }) {
     <div className="book-stage"><div className="book-cover" data-tone={book.tone}>
       <div className="book-brand">Jornada Culinária pelo Mundo</div>
       <div className="book-title">{title}{index === 15 && <small>Volume I</small>}</div>
+      <div className="book-cover-chef"><span>com receitas de</span><strong>{book.reference}</strong></div>
       <div className="book-art"><img src={coverImages[index]} alt={`Composição culinária ilustrativa para ${book.place}`} loading="lazy" width={400} height={400} /></div>
       <div className="book-footer">Uma coleção de sabores e tradições</div>
     </div></div>
