@@ -155,8 +155,8 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .book-flag { width: 21px; height: 14px; flex-shrink: 0; object-fit: cover; border-radius: 2.5px; box-shadow: 0 0 0 1px color-mix(in srgb, var(--foreground) 14%, transparent); }
 .book-meta h3 { font-family: var(--font-sans); font-size: 13px; font-weight: 600; }
 .book-meta p { font-size: 11px; color: var(--muted-foreground); margin-top: 5px; }
-.book-chef { font-family: var(--font-display); font-size: 16px; line-height: 1.3; color: var(--primary); margin-top: 9px; }
-.book-chef::before { content: 'Receitas do livro com referência de'; display: block; font-family: var(--font-sans); font-size: 9px; font-weight: 600; letter-spacing: 1.1px; text-transform: uppercase; color: var(--muted-foreground); margin-bottom: 3px; }
+.book-chef { font-family: var(--font-display); font-size: 17px; line-height: 1.25; color: var(--primary); margin-top: 9px; }
+.book-chef::before { content: 'Com receitas de'; display: block; font-family: var(--font-sans); font-size: 9px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; color: var(--muted-foreground); margin-bottom: 3px; }
 .tradition-grid { grid-template-columns: repeat(2,minmax(0,1fr)); max-width: 578px; }
 .collection-note { font-size: 11px; line-height: 1.8; color: var(--muted-foreground); text-align: center; max-width: 740px; margin: 32px auto 0; }
 .references { background: var(--secondary); }
