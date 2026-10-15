@@ -243,6 +243,7 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
   .book-stage { padding: 20px 14px; min-height: 215px; }
   .book-cover { width: 145px; }
   .book-title { font-size: 17px; min-height: 55px; }
+  .book-cover-chef strong { font-size: 9.5px; }
   .book-brand { font-size: 4px; }
   .book-title-row { gap: 6px; }
   .book-flag { width: 18px; height: 12px; }
