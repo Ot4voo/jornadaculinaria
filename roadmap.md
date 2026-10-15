@@ -1,6 +1,6 @@
 # Jornada Culinária pelo Mundo
-- [ ] Reformular clareza da oferta, coleção, entrega, FAQ e caminho de compra conforme o novo briefing.
-- [ ] Verificar ausência de textos provisórios e funcionamento em computador e celular.
+- [x] Reformular clareza da oferta, coleção, entrega, FAQ e caminho de compra conforme o novo briefing.
+- [x] Verificar ausência de textos provisórios e funcionamento em computador e celular.
 - [ ] Receber capas ou páginas reais para mostrar amostras do conteúdo, sem inventar exemplos.
 - [x] Criar página editorial com todas as seções e informações do documento.
 - [x] Verificar coleção, navegação de compra e exibição em celular.
