@@ -79,7 +79,7 @@ function Index() {
           <p className="hero-description">16 e-books e +650 receitas de 14 países, além de culinárias africanas e tradição afro-brasileira. Explore novos sabores na sua cozinha.</p>
           <div className="hero-values"><span><BookOpen />16 e-books em PDF</span><span><Utensils />+650 receitas</span></div>
           <p className="hero-delivery"><Mail size={15} />Produto digital, recebido por e-mail.</p><p className="hero-price"><s>de {purchase.priceFrom}</s><strong>por {purchase.priceTo}</strong><span>coleção completa</span></p><PurchaseButton />
-          <p className="hero-note">Receitas organizadas por nível de dificuldade. Imagem culinária ilustrativa.</p>
+          <p className="hero-note">Receitas organizadas por nível de dificuldade.</p>
         </div></div>
         <div className="hero-flags" aria-hidden="true">{heroFlags.map(code => <span className="hero-flag" key={code}><img src={flagImages[code]} alt="" width={19} height={13} loading="lazy" /></span>)}</div>
       </section>
