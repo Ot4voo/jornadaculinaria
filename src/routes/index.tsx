@@ -87,7 +87,7 @@ function Index() {
         {[["16", "e-books na coleção"], ["+650", "receitas para explorar"], ["14", "países à sua mesa"], ["PDF", "recebido por e-mail"]].map(([value,label]) => <div className="stat-item" key={label}><strong>{value}</strong><p>{label}</p></div>)}
       </div></div>
       <section id="colecao" className="section collection"><div className="page-width">
-        <div className="section-heading"><p className="eyebrow text-muted-foreground">Sua próxima descoberta está aqui</p><h2 className="section-title">Os 16 e-books da sua coleção</h2><p className="section-copy mt-4">14 volumes sobre países, um sobre culinárias africanas e um sobre a tradição afro-brasileira. Todos em PDF, para consultar na sua cozinha.</p><p className="collection-preview-label">Representações ilustrativas dos livros — não são capas ou páginas reais.</p></div>
+        <div className="section-heading"><p className="eyebrow text-muted-foreground">Sua próxima descoberta está aqui</p><h2 className="section-title">Os 16 e-books da sua coleção</h2><p className="section-copy mt-4">14 volumes sobre países, um sobre culinárias africanas e um sobre a tradição afro-brasileira. Todos em PDF, para consultar na sua cozinha.</p><p className="collection-preview-label"></p></div>
         <div className="book-grid">{books.map(book => <BookCard book={book} key={book.title} />)}</div>
         <p className="collection-note">+650 receitas = 648 receitas dos volumes originais incluídos + 3 adaptações adicionais em Itália à Mesa.<br />As imagens são composições culinárias ilustrativas, não uma lista de pratos incluídos nos e-books.</p>
         <div className="text-center mt-8"><PurchaseButton final /></div>
