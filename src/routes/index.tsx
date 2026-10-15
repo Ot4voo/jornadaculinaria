@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
-import { BookOpen, ChefHat, Check, ChevronDown, Globe2, Layers3, Leaf, Mail, FileText, Monitor, Utensils } from 'lucide-react';
+import { BookOpen, ChefHat, Check, ChevronDown, Layers3, Leaf, Mail, FileText, Monitor, Utensils } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { books } from '@/data/collection';
 import { purchase } from '@/data/purchase';
@@ -67,7 +67,7 @@ function Index() {
   return <>
     <header className="site-header page-width grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:flex sm:justify-between">
       <Brand />
-      <nav aria-label="Navegação principal" className="site-nav"><a href="#colecao">A coleção</a><a href="#experiencia">A experiência</a><a href="#perguntas">Perguntas frequentes</a></nav>
+      <nav aria-label="Navegação principal" className="site-nav"><a href="#colecao">A coleção</a><a href="#perguntas">Perguntas frequentes</a></nav>
       <PurchaseButton compact />
     </header>
     <main>
