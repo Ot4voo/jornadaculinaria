@@ -258,3 +258,13 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
   .header-cta { padding-inline: 8px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { transition: none !important; animation: none !important; } }
+@media (min-width: 768px) and (max-height: 800px) {
+  .hero-inner { padding-block: 24px 58px; }
+  .hero h1 { font-size: 39px; margin-block: 12px 8px; }
+  .hero-tagline { font-size: 20px; margin-bottom: 10px; }
+  .hero-description { font-size: 13px; line-height: 1.65; }
+  .hero-values { margin-top: 12px; }
+  .hero-price { margin-block: 12px; }
+  .hero-note { margin-top: 7px; }
+  .hero .purchase-status { margin-top: 6px; }
+}
