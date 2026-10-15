@@ -15,10 +15,10 @@ const heroFlags = flagByIndex.filter((code): code is string => Boolean(code));
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
-    { title: 'Jornada Culinária pelo Mundo | 16 e-books, 651 receitas' },
-    { name: 'description', content: 'Explore uma coleção de 16 e-books com 651 receitas de 14 países, culinárias africanas e tradição afro-brasileira. Novos sabores para a sua cozinha.' },
+    { title: 'Jornada Culinária pelo Mundo | 16 e-books, +650 receitas' },
+    { name: 'description', content: 'Explore uma coleção de 16 e-books com +650 receitas de 14 países, culinárias africanas e tradição afro-brasileira. Novos sabores para a sua cozinha.' },
     { property: 'og:title', content: 'Jornada Culinária pelo Mundo — uma coleção de sabores' },
-    { property: 'og:description', content: '16 e-books e 651 receitas organizadas por níveis de dificuldade para cozinhar em casa e explorar a diversidade culinária.' },
+    { property: 'og:description', content: '16 e-books e +650 receitas organizadas por níveis de dificuldade para cozinhar em casa e explorar a diversidade culinária.' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
   ] }),
@@ -47,7 +47,7 @@ function BookCard({ book }: { book: (typeof books)[number] }) {
 
 const faq = [
   ['Quantos e-books vêm na coleção?', 'A Jornada Culinária pelo Mundo reúne 16 e-books: 14 sobre países, um sobre culinárias africanas e um sobre a tradição culinária afro-brasileira.'],
-  ['Quantas receitas estão incluídas?', 'São 651 receitas no total: 648 receitas dos volumes originais incluídos e 3 adaptações adicionais no e-book Itália à Mesa. A edição italiana reúne 48 receitas originais e essas 3 adaptações.'],
+  ['Quantas receitas estão incluídas?', 'São +650 receitas no total: 648 receitas dos volumes originais incluídos e 3 adaptações adicionais no e-book Itália à Mesa. A edição italiana reúne 48 receitas originais e essas 3 adaptações.'],
   ['Quais culinárias fazem parte?', 'Itália, França, Líbano, Japão, Brasil, México, Índia, Espanha, Argentina, Estados Unidos, Reino Unido, Coreia, China e Peru, além das culinárias africanas e da tradição afro-brasileira. O e-book peruano é Peru à Mesa — Volume I, com 36 receitas.'],
   ['As receitas são organizadas por nível?', 'Sim. As receitas são organizadas por níveis de dificuldade e preparadas para cozinheiros domésticos no Brasil. Conforme o volume, há orientações sobre técnicas, ingredientes e possíveis substituições disponíveis no país.'],
   ['As receitas citadas são oficiais dos chefs?', 'Os nomes indicam referências ou inspirações editoriais em volumes específicos, sem implicar parceria, patrocínio ou endosso. As receitas atribuídas a Cheff Otto são adaptações editoriais de receitas publicadas por ele e ajustadas para esta coleção. Metzi é uma referência de restaurante.'],
@@ -76,20 +76,20 @@ function Index() {
         <div className="page-width hero-inner"><div className="hero-copy">
           <p className="eyebrow text-gold">Coleção digital · 16 e-books em PDF</p>
           <h1>Jornada Culinária<br />pelo Mundo</h1><p className="hero-tagline">Uma viagem que começa na sua cozinha.</p>
-          <p className="hero-description">16 e-books e 651 receitas de 14 países, além de culinárias africanas e tradição afro-brasileira. Explore novos sabores na sua cozinha.</p>
-          <div className="hero-values"><span><BookOpen />16 e-books em PDF</span><span><Utensils />651 receitas</span></div>
+          <p className="hero-description">16 e-books e +650 receitas de 14 países, além de culinárias africanas e tradição afro-brasileira. Explore novos sabores na sua cozinha.</p>
+          <div className="hero-values"><span><BookOpen />16 e-books em PDF</span><span><Utensils />+650 receitas</span></div>
           <p className="hero-delivery"><Mail size={15} />Produto digital, recebido por e-mail.</p><p className="hero-price"><s>de {purchase.priceFrom}</s><strong>por {purchase.priceTo}</strong><span>coleção completa</span></p><PurchaseButton />
           <p className="hero-note">Receitas organizadas por nível de dificuldade. Imagem culinária ilustrativa.</p>
         </div></div>
         <div className="hero-flags" aria-hidden="true">{heroFlags.map(code => <span className="hero-flag" key={code}><img src={flagImages[code]} alt="" width={19} height={13} loading="lazy" /></span>)}</div>
       </section>
       <div className="stat-band"><div className="page-width stat-grid">
-        {[["16", "e-books na coleção"], ["651", "receitas para explorar"], ["14", "países à sua mesa"], ["PDF", "recebido por e-mail"]].map(([value,label]) => <div className="stat-item" key={label}><strong>{value}</strong><p>{label}</p></div>)}
+        {[["16", "e-books na coleção"], ["+650", "receitas para explorar"], ["14", "países à sua mesa"], ["PDF", "recebido por e-mail"]].map(([value,label]) => <div className="stat-item" key={label}><strong>{value}</strong><p>{label}</p></div>)}
       </div></div>
       <section id="colecao" className="section collection"><div className="page-width">
         <div className="section-heading"><p className="eyebrow text-muted-foreground">Sua próxima descoberta está aqui</p><h2 className="section-title">Os 16 e-books da sua coleção</h2><p className="section-copy mt-4">14 volumes sobre países, um sobre culinárias africanas e um sobre a tradição afro-brasileira. Todos em PDF, para consultar na sua cozinha.</p><p className="collection-preview-label">Representações ilustrativas dos livros — não são capas ou páginas reais.</p></div>
         <div className="book-grid">{books.map(book => <BookCard book={book} key={book.title} />)}</div>
-        <p className="collection-note">651 receitas = 648 receitas dos volumes originais incluídos + 3 adaptações adicionais em Itália à Mesa.<br />As imagens são composições culinárias ilustrativas, não uma lista de pratos incluídos nos e-books.</p>
+        <p className="collection-note">+650 receitas = 648 receitas dos volumes originais incluídos + 3 adaptações adicionais em Itália à Mesa.<br />As imagens são composições culinárias ilustrativas, não uma lista de pratos incluídos nos e-books.</p>
         <div className="text-center mt-8"><PurchaseButton final /></div>
       </div></section>
       <section id="experiencia" className="section page-width experience-grid">
@@ -113,11 +113,11 @@ function Index() {
         {faq.map(([question,answer],index) => <div className="faq-item" key={question}><Button variant="ghost" className="faq-trigger" aria-expanded={openFaq === index} aria-controls={`faq-${index}`} onClick={() => setOpenFaq(openFaq === index ? null : index)}><span className="min-w-0">{question}</span><ChevronDown size={17} className={`shrink-0 transition-transform ${openFaq === index ? 'rotate-180' : ''}`} /></Button>{openFaq === index && <div id={`faq-${index}`} className="faq-answer">{answer}</div>}</div>)}
       </div></section>
       <section id="compra" className="section offer"><div className="page-width offer-inner">
-        <div><p className="eyebrow text-gold">Uma coleção inteira. Um novo repertório.</p><h2>Jornada Culinária<br />pelo Mundo</h2><div className="offer-facts"><span className="flex items-center gap-2"><BookOpen size={17} />16 e-books</span><span className="flex items-center gap-2"><ChefHat size={17} />651 receitas</span></div><p className="offer-summary">Itália, França, Líbano, Japão, Brasil, México, Índia, Espanha, Argentina, Estados Unidos, Reino Unido, Coreia, China e Peru. Mais as culinárias africanas e a tradição afro-brasileira.</p></div>
+        <div><p className="eyebrow text-gold">Uma coleção inteira. Um novo repertório.</p><h2>Jornada Culinária<br />pelo Mundo</h2><div className="offer-facts"><span className="flex items-center gap-2"><BookOpen size={17} />16 e-books</span><span className="flex items-center gap-2"><ChefHat size={17} />+650 receitas</span></div><p className="offer-summary">Itália, França, Líbano, Japão, Brasil, México, Índia, Espanha, Argentina, Estados Unidos, Reino Unido, Coreia, China e Peru. Mais as culinárias africanas e a tradição afro-brasileira.</p></div>
         <div className="offer-purchase"><p className="offer-label">Coleção completa</p>
           <p className="offer-price"><s className="offer-price-from">de {purchase.priceFrom}</s><strong className="offer-price-to">por {purchase.priceTo}</strong></p>
           <p className="offer-delivery">16 e-books em PDF, recebidos por e-mail.</p>
-          <ul className="offer-included">{['14 volumes sobre países', 'Culinárias africanas e tradição afro-brasileira', '651 receitas: 648 originais + 3 adaptações'].map(text => <li key={text}><Check size={15} /><span>{text}</span></li>)}</ul>
+          <ul className="offer-included">{['14 volumes sobre países', 'Culinárias africanas e tradição afro-brasileira', '+650 receitas: 648 originais + 3 adaptações'].map(text => <li key={text}><Check size={15} /><span>{text}</span></li>)}</ul>
           <PurchaseButton final />
           {purchase.billingType && <p className="offer-condition">{purchase.billingType}</p>}
           {purchase.payment && <p className="offer-condition">Pagamento: {purchase.payment}</p>}
