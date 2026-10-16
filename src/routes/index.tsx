@@ -12,6 +12,8 @@ const coverImages = Object.entries(import.meta.glob<string>('../assets/cover-*.j
 const flagImages = Object.entries(import.meta.glob<string>('../assets/flags/*.svg', { eager: true, query: '?url', import: 'default' })).reduce<Record<string, string>>((acc, [path, url]) => { acc[path.replace(/^.*\//, '').replace('.svg', '')] = url; return acc; }, {});
 const flagByIndex: (string | null)[] = ['it', 'fr', 'lb', 'jp', 'br', 'mx', 'in', 'es', null, null, 'ar', 'us', 'gb', 'kr', 'cn', 'pe'];
 const heroFlags = flagByIndex.filter((code): code is string => Boolean(code));
+const chefPhotos = Object.entries(import.meta.glob<{ url: string }>('../assets/chef-*.jpg.asset.json', { eager: true, import: 'default' })).reduce<Record<string, string>>((acc, [path, asset]) => { acc[path.replace(/^.*chef-/, '').replace('.jpg.asset.json', '')] = asset.url; return acc; }, {});
+const chefPhotoByIndex: (string | null)[] = ['italia', 'franca', 'libano', 'japao', 'brasil', 'mexico', 'india', 'espanha', 'africa', 'afro', 'argentina', 'eua', 'reino', null, 'china', 'peru'];
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
@@ -35,7 +37,7 @@ function BookCard({ book }: { book: (typeof books)[number] }) {
   const title = book.title.replace(' — Volume I', '');
   return <article className="book-card">
     <div className="book-ribbon" data-tone={book.tone}>
-      <span className="book-ribbon-avatar" aria-hidden="true"><ChefHat size={18} strokeWidth={1.5} /></span>
+      <span className="book-ribbon-avatar">{chefPhotoByIndex[index] ? <img src={chefPhotos[chefPhotoByIndex[index] as string]} alt={`Foto: ${book.reference}`} width={44} height={44} loading="lazy" /> : <ChefHat size={18} strokeWidth={1.5} aria-hidden="true" />}</span>
       <span className="book-ribbon-text"><strong>{book.reference}</strong><span>{book.place}</span></span>
       {flagCode ? <img src={flagImages[flagCode]} alt={`Bandeira: ${book.place}`} className="book-ribbon-flag" width={24} height={16} loading="lazy" /> : <span className="book-ribbon-flag book-ribbon-flag-empty" aria-hidden="true" />}
     </div>
