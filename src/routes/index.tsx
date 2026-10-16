@@ -34,6 +34,11 @@ function BookCard({ book }: { book: (typeof books)[number] }) {
   const flagCode = flagByIndex[index];
   const title = book.title.replace(' — Volume I', '');
   return <article className="book-card">
+    <div className="book-ribbon" data-tone={book.tone}>
+      <span className="book-ribbon-avatar" aria-hidden="true"><ChefHat size={18} strokeWidth={1.5} /></span>
+      <span className="book-ribbon-text"><strong>{book.reference}</strong><span>{book.place}</span></span>
+      {flagCode ? <img src={flagImages[flagCode]} alt={`Bandeira: ${book.place}`} className="book-ribbon-flag" width={24} height={16} loading="lazy" /> : <span className="book-ribbon-flag book-ribbon-flag-empty" aria-hidden="true" />}
+    </div>
     <div className="book-stage"><div className="book-cover" data-tone={book.tone}>
       <div className="book-brand">Jornada Culinária pelo Mundo</div>
       <div className="book-title">{title}{index === 15 && <small>Volume I</small>}</div>
